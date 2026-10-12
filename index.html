@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta name="description" content="林吉健的个人主页，Java 后端开发工程师，记录项目经历与技术方向。">
+  <title>林吉健 — Java 后端开发</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17243a;
+      --muted: #66758b;
+      --line: #e5eaf1;
+      --paper: #fff;
+      --canvas: #f5f7fb;
+      --blue: #315fe8;
+      --blue-soft: #edf2ff;
+      --mint: #dff5ed;
+      --shadow: 0 18px 50px rgb(29 48 82 / 7%);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 90% 0%, rgb(222 233 255 / 65%), transparent 32rem),
+        var(--canvas);
+      color: var(--ink);
+      font-family: Inter, "SF Pro Display", "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .shell {
+      width: min(1080px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 78px;
+    }
+
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 750;
+      letter-spacing: -.03em;
+    }
+
+    .mark {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--ink);
+      color: white;
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+
+    .nav {
+      display: flex;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .nav a:hover, .text-link:hover { color: var(--blue); }
+
+    main { padding: 50px 0 88px; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(260px, .75fr);
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .hero-copy, .profile-card, .section-card {
+      border: 1px solid rgb(226 232 241 / 88%);
+      border-radius: 24px;
+      background: rgb(255 255 255 / 88%);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(32px, 6vw, 66px);
+    }
+
+    .hero-copy::after {
+      position: absolute;
+      right: -78px;
+      bottom: -130px;
+      width: 270px;
+      height: 270px;
+      border: 1px solid rgb(49 95 232 / 12%);
+      border-radius: 50%;
+      box-shadow: 0 0 0 28px rgb(49 95 232 / 3%), 0 0 0 58px rgb(49 95 232 / 2%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 24px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #43b889;
+      content: "";
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 660px;
+      margin-bottom: 18px;
+      font-size: clamp(38px, 6.2vw, 66px);
+      letter-spacing: -.065em;
+      line-height: 1.12;
+    }
+
+    h1 span { color: var(--blue); }
+
+    .intro {
+      max-width: 540px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 17px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+      font-size: 13px;
+      font-weight: 650;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: #c6d3f8;
+      box-shadow: 0 8px 20px rgb(49 95 232 / 10%);
+    }
+
+    .button.primary {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: white;
+    }
+
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 26px;
+    }
+
+    .avatar {
+      display: grid;
+      width: 74px;
+      height: 74px;
+      place-items: center;
+      border: 8px solid #f2f5ff;
+      border-radius: 24px;
+      background: linear-gradient(145deg, #dce7ff, #c8d9ff);
+      color: #264ebd;
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .profile-card h2 {
+      margin: 22px 0 2px;
+      font-size: 22px;
+      letter-spacing: -.04em;
+    }
+
+    .role { margin-bottom: 22px; color: var(--muted); font-size: 13px; }
+
+    .profile-meta {
+      display: grid;
+      gap: 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .profile-meta strong { color: var(--ink); font-weight: 650; }
+
+    .section-card {
+      margin-top: 26px;
+      padding: clamp(24px, 4vw, 38px);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0;
+      font-size: 23px;
+      letter-spacing: -.045em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .project {
+      display: flex;
+      gap: 16px;
+      min-height: 150px;
+      align-items: flex-start;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: #fff;
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .project > div:last-child { min-width: 0; }
+
+    .project:hover {
+      transform: translateY(-3px);
+      border-color: #cbd7f9;
+    }
+
+    .project-icon {
+      display: grid;
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .project:nth-child(2) .project-icon { background: #eaf6f1; color: #25815e; }
+    .project:nth-child(3) .project-icon { background: #fff3e7; color: #b56c22; }
+    .project:nth-child(4) .project-icon { background: #f2edff; color: #7154c7; }
+
+    .project h3 { margin: 1px 0 6px; font-size: 15px; letter-spacing: -.02em; line-height: 1.5; }
+    .project p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 11px;
+    }
+
+    .tags span {
+      padding: 2px 8px;
+      border: 1px solid #edf0f5;
+      border-radius: 7px;
+      background: #f8f9fc;
+      color: #637087;
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .personal-label {
+      display: inline-block;
+      margin-left: 4px;
+      color: #25815e;
+      font-size: 10px;
+      font-weight: 550;
+      letter-spacing: 0;
+    }
+
+    .skill-groups { display: grid; gap: 18px; }
+    .skill-group { display: grid; grid-template-columns: 126px 1fr; align-items: center; gap: 12px; }
+    .skill-group > strong { font-size: 13px; }
+    .skill-group .tags { margin: 0; }
+
+    .timeline { display: grid; gap: 0; }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 20px;
+      padding: 17px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .timeline-date { color: var(--muted); font-size: 12px; }
+    .timeline-item strong { font-size: 13px; }
+    .timeline-item p { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
+
+    .personal-project { grid-column: 1 / -1; }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 26px 2px 0;
+      color: #8a95a6;
+      font-size: 11px;
+    }
+
+    .text-link { color: var(--muted); transition: color .2s ease; }
+
+    @media (max-width: 720px) {
+      .shell { width: min(100% - 30px, 560px); }
+      .topbar { min-height: 66px; }
+      .nav { gap: 16px; font-size: 12px; }
+      main { padding: 28px 0 56px; }
+      .hero { grid-template-columns: 1fr; gap: 14px; }
+      .hero-copy { padding: 34px 25px; border-radius: 20px; }
+      .profile-card { min-height: 218px; border-radius: 20px; }
+      .section-card { margin-top: 14px; padding: 23px 19px; border-radius: 20px; }
+      .project-grid { grid-template-columns: 1fr; }
+      .personal-project { grid-column: auto; }
+      .skill-group { grid-template-columns: 1fr; gap: 3px; }
+      .skill-group .tags { margin-top: 5px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 3px; }
+    }
+
+    @media (max-width: 430px) {
+      .nav { gap: 11px; }
+      .nav a { font-size: 11px; }
+      .section-heading { align-items: start; flex-direction: column; gap: 4px; }
+      footer { flex-direction: column; gap: 4px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="wordmark" href="#about" aria-label="林吉健主页">
+        <span class="mark" aria-hidden="true">林</span>
+        <span>LIN JIJIAN</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="#about">关于</a>
+        <a href="#projects">项目</a>
+        <a href="#focus">技术栈</a>
+        <a href="#experience">经历</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="about" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">个人主页 · 2026</p>
+          <h1 id="hero-title">你好，我是<br><span>林吉健</span></h1>
+          <p class="intro">四年 Java 后端开发经验，参与电力行业大型项目与企业级系统建设，也持续探索 RAG 知识库和大模型应用如何落地业务。</p>
+          <div class="actions">
+            <a class="button primary" href="#projects">查看项目经历 <span aria-hidden="true">&nbsp;↘</span></a>
+            <a class="button" href="https://github.com/return-lin" target="_blank" rel="noopener noreferrer">访问 GitHub</a>
+          </div>
+        </div>
+
+        <aside class="profile-card" aria-label="个人信息">
+          <div>
+            <div class="avatar" aria-hidden="true">林</div>
+            <h2>林吉健</h2>
+            <p class="role">Java 后端开发</p>
+          </div>
+          <div class="profile-meta">
+            <span>职业方向　<strong>后端开发</strong></span>
+            <span>项目领域　<strong>电力 · AI · 医疗</strong></span>
+            <a class="text-link" href="tel:18587149991">联系方式　<strong>185 8714 9991 ↗</strong></a>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section-card" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <h2 id="projects-title">项目经历</h2>
+          <p>从业务系统到 AI 知识库的项目实践</p>
+        </div>
+        <div class="project-grid">
+          <article class="project">
+            <div class="project-icon" aria-hidden="true">政</div>
+            <div>
+              <h3>深圳供电局配网设计评审系统</h3>
+              <p>建设项目申报、设计评审、流程审批与规则校验；负责评审和审批等核心模块，并基于 Activity 实现复杂流程，支撑深圳 11 个供电局业务上线。</p>
+              <div class="tags"><span>Spring Boot</span><span>Spring Security</span><span>Oracle</span><span>Redis</span><span>Activity</span></div>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-icon" aria-hidden="true">AI</div>
+            <div>
+              <h3>深圳供电局「大瓦特」AI 平台</h3>
+              <p>以 MaxKB 构建电力行业 RAG 知识库，实现规范文档检索与智能问答，并与评审系统集成，支持项目资料智能检测。</p>
+              <div class="tags"><span>RAG</span><span>MaxKB</span><span>Spring Boot</span><span>Redis</span></div>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-icon" aria-hidden="true">服</div>
+            <div>
+              <h3>南方电网设计评审辅助决策平台</h3>
+              <p>参与全网基建领域设计评审统一管理平台建设，负责业务模块、外部系统接口联调及数据交互。</p>
+              <div class="tags"><span>Spring Cloud</span><span>Spring Security</span><span>MyBatis</span><span>Redis</span></div>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-icon" aria-hidden="true">医</div>
+            <div>
+              <h3>永川区大数据产业园医疗体检系统</h3>
+              <p>开发体检预约、套餐及会员管理等功能，搭建医疗图片存储服务，并通过 ECharts 展示业务数据。</p>
+              <div class="tags"><span>Spring Boot</span><span>MyBatis</span><span>MinIO</span><span>ECharts</span></div>
+            </div>
+          </article>
+          <article class="project personal-project">
+            <div class="project-icon" aria-hidden="true">独</div>
+            <div>
+              <h3>体态健康工程管理系统 <span class="personal-label">个人独立开发</span></h3>
+              <p>独立完成健康管理平台的需求、开发与部署，包含体重记录、数据看板、排行榜、AI 分析、聊天室及知识分享。</p>
+              <div class="tags"><span>Spring Boot</span><span>Vue</span><span>MyBatis-Plus</span><span>MySQL</span><span>RBAC</span></div>
+              <a class="project-link" href="http://47.112.222.233/" target="_blank" rel="noopener noreferrer">访问个人项目 ↗</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-card" id="focus" aria-labelledby="focus-title">
+        <div class="section-heading">
+          <h2 id="focus-title">技术栈</h2>
+          <p>基于项目实践的技术积累</p>
+        </div>
+        <div class="skill-groups">
+          <div class="skill-group"><strong>语言与框架</strong><div class="tags"><span>Java</span><span>Spring Boot</span><span>Spring Cloud</span><span>Spring Security</span><span>MyBatis / MyBatis-Plus</span></div></div>
+          <div class="skill-group"><strong>数据与中间件</strong><div class="tags"><span>MySQL</span><span>Oracle</span><span>Redis</span><span>Elasticsearch</span><span>Kafka / RocketMQ</span></div></div>
+          <div class="skill-group"><strong>AI 与工程化</strong><div class="tags"><span>RAG</span><span>MaxKB</span><span>Linux</span><span>Docker</span><span>CI/CD</span></div></div>
+        </div>
+      </section>
+
+      <section class="section-card" id="experience" aria-labelledby="experience-title">
+        <div class="section-heading">
+          <h2 id="experience-title">工作与教育</h2>
+          <p>职业经历 · 2018—2026</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item"><span class="timeline-date">2022.08 — 2026.05</span><div><strong>Java 开发工程师</strong><p>昆明东电科技有限公司</p></div></div>
+          <div class="timeline-item"><span class="timeline-date">2021.06 — 2022.07</span><div><strong>Java 开发工程师</strong><p>智酷道捷（重庆）科技有限公司</p></div></div>
+          <div class="timeline-item"><span class="timeline-date">2018.09 — 2022.06</span><div><strong>计算机科学与技术 · 本科</strong><p>云南大学旅游文化学院</p></div></div>
+        </div>
+      </section>
+
+      <footer>
+        <span>© 2026 林吉健 · Java 后端开发</span>
+        <a class="text-link" href="https://github.com/return-lin" target="_blank" rel="noopener noreferrer">github.com/return-lin</a>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
