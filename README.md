@@ -8,9 +8,12 @@
 
 - **个人介绍**：Java 后端开发方向、职业概况与联系方式。
 - **项目经历**：深圳供电局配网设计评审系统、「大瓦特」AI 平台、南方电网设计评审辅助决策平台、永川区产业园医疗体检系统，以及个人独立开发的体态健康工程管理系统。
+- **GitHub 项目直达**：体态健康管理系统 [`weight-visualization-application`](https://github.com/return-lin/weight-visualization-application) 和习惯追踪项目 [`keep_day`](https://github.com/return-lin/keep_day)，也可浏览[全部仓库](https://github.com/return-lin?tab=repositories)。
 - **技术栈**：Java、Spring Boot、Spring Cloud、MyBatis、MySQL、Oracle、Redis、RAG、MaxKB、Docker 等简历中列出的技术方向。
-- **工作与教育**：工作经历及计算机科学与技术本科教育。
-- **响应式布局**：适配桌面与移动设备，提供页面内导航和项目链接。
+- **工作与教育**：工作经历及计算机科学与技术本科教育，并提供简历中的电话和邮箱链接。
+- **中英文切换**：使用页面顶部的语言按钮切换中文和英文内容。
+- **暗黑/明亮主题**：使用页面顶部的主题按钮即时切换显示主题。
+- **响应式布局**：适配手机、平板与桌面设备，提供页面内导航和项目链接。
 
 ## 🚀 本地预览
 
@@ -30,7 +33,7 @@ python3 -m http.server 8000
 └── README.md    # 项目说明
 ```
 
-本项目是纯静态网页，没有 npm 依赖、构建步骤或服务端代码。修改页面内容或样式时，直接编辑 `index.html`。
+本项目是纯静态网页，没有 npm 依赖、构建步骤或服务端代码。修改页面内容、翻译或样式时，直接编辑 `index.html`。
 
 ## 🌐 GitHub Pages
 
